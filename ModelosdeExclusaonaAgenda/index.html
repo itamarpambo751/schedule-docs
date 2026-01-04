@@ -1,0 +1,1672 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://itamarpambo751.github.io/Consultation-Docs/ModelosdeExclusaonaAgenda/">
+      
+      
+        <link rel="prev" href="../GuiaDeConfiguracaoDaAgenda/">
+      
+      
+        <link rel="next" href="../GuiadegeracaodeSlotsFormaA-horarios/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>2. Modelo de Exclusao na Agenda - API Gestao de Agendas e Marcacoes de Consultas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modelos-de-exclusao-baika-saude-atualizado-pelo-novo-schema" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="API Gestao de Agendas e Marcacoes de Consultas" class="md-header__button md-logo" aria-label="API Gestao de Agendas e Marcacoes de Consultas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            API Gestao de Agendas e Marcacoes de Consultas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Modelo de Exclusao na Agenda
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="API Gestao de Agendas e Marcacoes de Consultas" class="md-nav__button md-logo" aria-label="API Gestao de Agendas e Marcacoes de Consultas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    API Gestao de Agendas e Marcacoes de Consultas
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão Geral
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Conceitos-base do Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Exclusões e Folgas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Horários de Trabalho dos Profissionais e Atribuição Automática
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Marcação de Consultas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Exclusões de Dias e Períodos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Horários de Trabalho dos Profissionais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Slots e HourBoxes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Marcação de Consultas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Exclusões e Bloqueios Avançados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Horários de Trabalho de Profissionais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Tecnica e regras de negócio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão Tecnica e regras de negócio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GuiaDeConfiguracaoDaAgenda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Guia de configuração de agenda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Modelo de Exclusao na Agenda
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Modelo de Exclusao na Agenda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-excluderange-bloqueios-parciais-janelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo ExcludeRange (bloqueios parciais / janelas)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo ExcludeRange (bloqueios parciais / janelas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-conforme-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura (conforme schema)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura (conforme schema)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invariantes-de-governacao-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invariantes de Governação (escopo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacoes-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validações Essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretacao-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretação (engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-payloads-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos (payloads lógicos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-excludeday-bloqueio-do-dia-inteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo ExcludeDay (bloqueio do dia inteiro)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo ExcludeDay (bloqueio do dia inteiro)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-conforme-schema_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura (conforme schema)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacoes-essenciais_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validações Essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regras-de-prioridade-e-interacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regras de Prioridade e Interação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendacoes-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recomendações de Implementação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erros-e-codigos-sugeridos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erros e Códigos sugeridos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-combinado-dia-janelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo combinado (dia + janelas)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GuiadegeracaodeSlotsFormaA-horarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Guia de geração de Slots Forma A (Horarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GuiadegeracaodeSlotsFormaB-capacidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Guia de geração de Slots Forma B (Capacidade)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-excluderange-bloqueios-parciais-janelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo ExcludeRange (bloqueios parciais / janelas)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo ExcludeRange (bloqueios parciais / janelas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-conforme-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura (conforme schema)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura (conforme schema)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invariantes-de-governacao-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invariantes de Governação (escopo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacoes-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validações Essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretacao-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretação (engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-payloads-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos (payloads lógicos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-excludeday-bloqueio-do-dia-inteiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo ExcludeDay (bloqueio do dia inteiro)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelo ExcludeDay (bloqueio do dia inteiro)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-conforme-schema_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura (conforme schema)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacoes-essenciais_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validações Essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regras-de-prioridade-e-interacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regras de Prioridade e Interação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendacoes-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recomendações de Implementação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erros-e-codigos-sugeridos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erros e Códigos sugeridos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-combinado-dia-janelas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo combinado (dia + janelas)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modelos-de-exclusao-baika-saude-atualizado-pelo-novo-schema">Modelos de Exclusão – Baika + Saúde (Atualizado pelo novo schema)</h1>
+<p>Este documento descreve como configurar <strong>bloqueios de disponibilidade</strong> usando os modelos <code>ExcludeRange</code> e <code>ExcludeDay</code>, de acordo com o <strong>schema atualizado</strong>.</p>
+<blockquote>
+<p><strong>Prioridade geral:</strong> <code>ExcludeDay</code> (bloqueia o <strong>dia inteiro</strong>) <strong>&gt;</strong> <code>ExcludeRange</code> (bloqueia <strong>janelas/partes do dia</strong>).<br />
+<strong>Timezone:</strong> Todas as datas/horas devem ser armazenadas e processadas em <strong>UTC (timestamptz)</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="modelo-excluderange-bloqueios-parciais-janelas">Modelo <code>ExcludeRange</code> (bloqueios parciais / janelas)</h2>
+<p>Usado para <strong>bloquear intervalos de tempo dentro de um dia</strong> (ex.: almoço 12:00–13:00), por <strong>dias específicos</strong> ou <strong>recorrências</strong> (diária, semanal, RRULE), com <strong>escopo</strong> por <strong>unidade</strong> e <strong>agendas</strong>.</p>
+<h3 id="estrutura-conforme-schema">Estrutura (conforme schema)</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>String @id @default(uuid())</code></td>
+<td>Sim</td>
+<td>Identificador único.</td>
+</tr>
+<tr>
+<td><code>startTime</code></td>
+<td><code>DateTime?</code></td>
+<td>Não</td>
+<td><strong>Hora</strong> inicial para bloqueios <strong>recorrentes</strong> (interpretação “relógio” em UTC).</td>
+</tr>
+<tr>
+<td><code>endTime</code></td>
+<td><code>DateTime?</code></td>
+<td>Não</td>
+<td><strong>Hora</strong> final do bloqueio recorrente.</td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td><code>DateTime? @db.Timestamptz</code></td>
+<td>Não</td>
+<td><strong>Data/hora</strong> inicial para bloqueios <strong>pontuais ou de vários dias</strong>.</td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td><code>DateTime? @db.Timestamptz</code></td>
+<td>Não</td>
+<td><strong>Data/hora</strong> final do bloqueio pontual.</td>
+</tr>
+<tr>
+<td><code>excludeForAllSlots</code></td>
+<td><code>Boolean @default(false)</code></td>
+<td>Sim</td>
+<td>Se <code>true</code>, remove <strong>todos os horários</strong> do(s) slot(s) na janela; se <code>false</code>, permite granularidade por lista/dia.</td>
+</tr>
+<tr>
+<td><code>excludeFor</code></td>
+<td><code>WeekDays[] @default([])</code></td>
+<td>Não</td>
+<td><strong>Dias da semana</strong> aplicáveis quando <code>typeOfRecurrence ≠ NONE</code> (ignorado se <code>excludeForAllSlots = true</code>).</td>
+</tr>
+<tr>
+<td><code>excludeForSpecificDates</code></td>
+<td><code>DateTime[] @default([])</code></td>
+<td>Não</td>
+<td>Datas <strong>pontuais</strong> a bloquear (p. ex., dias soltos no mês).</td>
+</tr>
+<tr>
+<td><code>typeOfRecurrence</code></td>
+<td><code>TypeOfRecurrence @default(NONE)</code></td>
+<td>Sim</td>
+<td>Frequência: <code>NONE/DAILY/WEEKLY/MONTHLY/.../CUSTOM</code>.</td>
+</tr>
+<tr>
+<td><code>isActive</code></td>
+<td><code>Boolean @default(true)</code></td>
+<td>Sim</td>
+<td>Liga/desliga o bloqueio.</td>
+</tr>
+<tr>
+<td><code>healthUnitTaxId</code></td>
+<td><code>String</code></td>
+<td>Sim</td>
+<td>Escopo: unidade de saúde a que o bloqueio pertence.</td>
+</tr>
+<tr>
+<td><code>includeForAllUnitSchedules</code></td>
+<td><code>Boolean @default(false)</code></td>
+<td>Sim</td>
+<td>Se <code>true</code>, aplica-se a <strong>todas</strong> as agendas da unidade (<code>healthUnitTaxId</code>).</td>
+</tr>
+<tr>
+<td><code>assignedSchedules</code></td>
+<td><code>Schedules_ExcludeRange_[] @relation("Range")</code></td>
+<td>Condicional</td>
+<td>Relação M:N para <strong>vincular agendas específicas</strong> quando <code>includeForAllUnitSchedules = false</code>.</td>
+</tr>
+<tr>
+<td><code>definedBy</code></td>
+<td><code>String</code></td>
+<td>Sim</td>
+<td>Identificador do utilizador/sistema que criou.</td>
+</tr>
+<tr>
+<td><code>rrule</code></td>
+<td><code>String?</code></td>
+<td>Não</td>
+<td>Regra iCalendar (RFC 5545), p. ex. <code>FREQ=WEEKLY;INTERVAL=2;BYDAY=SA</code>.</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>String</code></td>
+<td>Sim</td>
+<td>Título amigável (“Intervalo de almoço”, “Formação interna”).</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td><code>String?</code></td>
+<td>Não</td>
+<td>Motivo/descrição.</td>
+</tr>
+<tr>
+<td><code>deletedAt</code></td>
+<td><code>DateTime?</code></td>
+<td>Não</td>
+<td>Soft-delete.</td>
+</tr>
+<tr>
+<td><code>deletedBy</code></td>
+<td><code>String?</code></td>
+<td>Não</td>
+<td>Quem eliminou.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>DateTime @updatedAt</code></td>
+<td>Sim</td>
+<td>Auditoria.</td>
+</tr>
+<tr>
+<td><code>updatedBy</code></td>
+<td><code>String</code></td>
+<td>Sim</td>
+<td>Quem actualizou por último.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="invariantes-de-governacao-escopo">Invariantes de Governação (escopo)</h4>
+<ul>
+<li><strong>A)</strong> Se <code>includeForAllUnitSchedules = true</code> ⇒ <strong><code>assignedSchedules</code> deve estar vazio</strong> (aplica-se a todas as agendas da unidade).  </li>
+<li><strong>B)</strong> Se <code>includeForAllUnitSchedules = false</code> ⇒ <strong><code>assignedSchedules</code> deve ter pelo menos 1 agenda</strong>.  <blockquote>
+<p>Caso contrário, o escopo fica ambíguo.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="validacoes-essenciais">Validações Essenciais</h4>
+<ul>
+<li>Quando usar <code>startTime</code>/<code>endTime</code> (recorrente), <strong>ambos</strong> devem existir e <code>startTime &lt; endTime</code>.  </li>
+<li>Em bloqueios pontuais, <code>startDate &lt;= endDate</code> (quando ambos informados).  </li>
+<li><code>typeOfRecurrence ≠ NONE</code> e <strong>sem <code>excludeFor</code>/<code>rrule</code>/<code>excludeForSpecificDates</code></strong> ⇒ comportamento deve ser <strong>claramente definido</strong> (recomenda-se exigir ao menos uma dessas âncoras).  </li>
+<li><code>isActive = false</code> ⇒ o bloqueio <strong>não deve</strong> ser aplicado na geração/cálculo.</li>
+</ul>
+<h4 id="interpretacao-engine">Interpretação (engine)</h4>
+<ol>
+<li>Determina <strong>escopo</strong>: unidade (<code>healthUnitTaxId</code>) e <strong>conjunto de agendas</strong> (<code>includeForAllUnitSchedules</code> vs <code>assignedSchedules</code>).  </li>
+<li>Expande <strong>recorrências</strong> (<code>typeOfRecurrence</code> ou <code>rrule</code>) e/ou <strong>datas específicas</strong> (<code>excludeForSpecificDates</code>).  </li>
+<li>Para cada <strong>dia alvo</strong>:</li>
+<li>Se dia foi totalmente excluído por <strong>ExcludeDay</strong> ⇒ <strong>ignorar ExcludeRange</strong> (prioridade do dia).  </li>
+<li>Caso contrário, aplique a <strong>janelagem</strong> <code>startTime → endTime</code> e remova/etiquete horas como <code>BLOCKED</code>.  </li>
+<li>Nunca remover horas com <code>status ∈ {BOOKED, HELD}</code>; no máximo, <strong>marcar como <code>BLOCKED</code></strong> para futuras marcações.</li>
+</ol>
+<h4 id="exemplos-payloads-logicos">Exemplos (payloads lógicos)</h4>
+<ul>
+<li><strong>Intervalo diário (todos os schedules da unidade):</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Almoço&quot;,
+  &quot;reason&quot;: &quot;Pausa operacional&quot;,
+  &quot;typeOfRecurrence&quot;: &quot;DAILY&quot;,
+  &quot;startTime&quot;: &quot;1970-01-01T12:00:00Z&quot;,
+  &quot;endTime&quot;: &quot;1970-01-01T13:00:00Z&quot;,
+  &quot;excludeForAllSlots&quot;: true,
+  &quot;includeForAllUnitSchedules&quot;: true,
+  &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;,
+  &quot;definedBy&quot;: &quot;ops@baika&quot;
+}
+</code></pre>
+<ul>
+<li><strong>Formação semanal (apenas QUARTAS de agendas específicas):</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Formação Interna&quot;,
+  &quot;typeOfRecurrence&quot;: &quot;WEEKLY&quot;,
+  &quot;excludeFor&quot;: [&quot;WEDNESDAY&quot;],
+  &quot;startTime&quot;: &quot;1970-01-01T14:00:00Z&quot;,
+  &quot;endTime&quot;: &quot;1970-01-01T17:00:00Z&quot;,
+  &quot;excludeForAllSlots&quot;: false,
+  &quot;includeForAllUnitSchedules&quot;: false,
+  &quot;assignedSchedules&quot;: [&quot;sch_123&quot;,&quot;sch_456&quot;],
+  &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;,
+  &quot;definedBy&quot;: &quot;ops@baika&quot;
+}
+</code></pre>
+<ul>
+<li><strong>Bloqueio pontual (janela de manutenção):</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Janela de Manutenção&quot;,
+  &quot;startDate&quot;: &quot;2025-10-21T08:00:00Z&quot;,
+  &quot;endDate&quot;: &quot;2025-10-21T10:00:00Z&quot;,
+  &quot;excludeForAllSlots&quot;: true,
+  &quot;includeForAllUnitSchedules&quot;: true,
+  &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;,
+  &quot;definedBy&quot;: &quot;ops@baika&quot;
+}
+</code></pre>
+<hr />
+<h2 id="modelo-excludeday-bloqueio-do-dia-inteiro">Modelo <code>ExcludeDay</code> (bloqueio do dia inteiro)</h2>
+<p>Usado para <strong>remover um dia inteiro</strong> da disponibilidade (feriados, recessos, inventários). Tem <strong>prioridade</strong> sobre <code>ExcludeRange</code>.</p>
+<h3 id="estrutura-conforme-schema_1">Estrutura (conforme schema)</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>String @id @default(uuid())</code></td>
+<td>Sim</td>
+<td>Identificador único.</td>
+</tr>
+<tr>
+<td><code>specificDate</code></td>
+<td><code>DateTime? @db.Timestamptz</code></td>
+<td>Não</td>
+<td>Data exacta (bloqueio pontual do <strong>dia inteiro</strong>).</td>
+</tr>
+<tr>
+<td><code>weekDays</code></td>
+<td><code>WeekDays[]</code></td>
+<td>Não</td>
+<td>Dias recorrentes (ex.: <code>[SUNDAY]</code> para encerrar aos domingos).</td>
+</tr>
+<tr>
+<td><code>typeOfRecurrence</code></td>
+<td><code>TypeOfRecurrence?</code></td>
+<td>Não</td>
+<td>Frequência para recorrência semanal/mensal/etc.</td>
+</tr>
+<tr>
+<td><code>rrule</code></td>
+<td><code>String?</code></td>
+<td>Não</td>
+<td>Regra iCalendar para padrões anuais (ex.: feriados).</td>
+</tr>
+<tr>
+<td><code>isActive</code></td>
+<td><code>Boolean @default(true)</code></td>
+<td>Sim</td>
+<td>Liga/desliga.</td>
+</tr>
+<tr>
+<td><code>healthUnitTaxId</code></td>
+<td><code>String</code></td>
+<td>Sim</td>
+<td>Escopo por unidade.</td>
+</tr>
+<tr>
+<td><code>schedules</code></td>
+<td><code>Schedule_ExcludeDay_[] @relation("Day")</code></td>
+<td>Não</td>
+<td>Relação M:N com <strong>agendas</strong> (quando a regra for por conjunto específico).</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>String</code></td>
+<td>Sim</td>
+<td>Título (ex.: “Natal”).</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td><code>String?</code></td>
+<td>Não</td>
+<td>Motivo/descrição.</td>
+</tr>
+<tr>
+<td><code>deletedAt</code></td>
+<td><code>DateTime?</code></td>
+<td>Não</td>
+<td>Soft-delete.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Observação</strong>: o schema não define os campos <code>includeForAllUnitSchedules/definedBy/updatedBy</code> para <code>ExcludeDay</code>. O escopo por agenda é definido via relação M:N (<code>schedules</code>). Caso seja necessário “todas as agendas da unidade”, convencionar <strong>não associar</strong> nenhuma agenda e tratar <strong>via política</strong> (ou criar um <code>ExcludeDay</code> por agenda com um procedimento auxiliar).</p>
+</blockquote>
+<h3 id="validacoes-essenciais_1">Validações Essenciais</h3>
+<ul>
+<li>Se usar <code>specificDate</code>, <strong>não</strong> usar simultaneamente uma <code>rrule</code> que resulte no mesmo dia (evitar duplicidade).  </li>
+<li><code>isActive = false</code> ⇒ ignorar.  </li>
+<li>Quando usar <code>weekDays</code> com <code>typeOfRecurrence</code>, validar que o motor de geração entende a combinação (ex.: <code>WEEKLY</code> + <code>[SUNDAY]</code>).</li>
+</ul>
+<h3 id="exemplos">Exemplos</h3>
+<ul>
+<li><strong>Feriado anual (todas as agendas da unidade, via política):</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Natal&quot;,
+  &quot;rrule&quot;: &quot;FREQ=YEARLY;BYMONTH=12;BYMONTHDAY=25&quot;,
+  &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;
+}
+</code></pre>
+<ul>
+<li><strong>Recesso pontual em dia específico para agendas selecionadas:</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Recesso Pós-Feriado&quot;,
+  &quot;specificDate&quot;: &quot;2025-12-26T00:00:00Z&quot;,
+  &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;,
+  &quot;schedules&quot;: [&quot;sch_123&quot;,&quot;sch_456&quot;]
+}
+</code></pre>
+<hr />
+<h2 id="regras-de-prioridade-e-interacao">Regras de Prioridade e Interação</h2>
+<ol>
+<li><strong><code>ExcludeDay</code></strong> anula o <strong>dia inteiro</strong> (os <em>slots</em> do dia <strong>não são gerados</strong> ou são removidos).  </li>
+<li><code>ExcludeRange</code> aplica-se apenas <strong>se o dia não estiver bloqueado</strong> por <code>ExcludeDay</code>.  </li>
+<li>Em colisão com horas <strong>BOOKED/HELD</strong>, <strong>não remova</strong>; apenas <strong>marque como <code>BLOCKED</code></strong> e direcione o fluxo de <strong>reagendamento/cancelamento</strong>.  </li>
+<li><code>isActive = false</code> ⇒ nenhuma ação.  </li>
+</ol>
+<hr />
+<h2 id="recomendacoes-de-implementacao">Recomendações de Implementação</h2>
+<ul>
+<li><strong>UTC-only</strong>: normalize todos os campos <code>DateTime</code>/<code>Time</code> para UTC.  </li>
+<li><strong>Engine de RRULE</strong>: validar RRULE no <em>backend</em> (rejeitar strings inválidas).  </li>
+<li><strong>Escopo coerente</strong>: aplicar as invariantes A/B do <code>ExcludeRange</code> no serviço antes de persistir.  </li>
+<li><strong>Idempotência</strong>: <strong>não</strong> duplicar bloqueios equivalentes; prefira <em>upsert</em> por <code>(healthUnitTaxId, title, período)</code> se fizer sentido no teu domínio.</li>
+<li><strong>Auditoria</strong>: utilizar <code>definedBy</code>, <code>updatedBy</code>, <code>updatedAt</code> (quando disponíveis) e <strong>logs com <code>correlationId</code></strong> no processamento.</li>
+</ul>
+<hr />
+<h2 id="erros-e-codigos-sugeridos">Erros e Códigos sugeridos</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Código</th>
+<th>Quando</th>
+<th>Mensagem (exemplo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>400</strong></td>
+<td>Payload malformado / RRULE inválida</td>
+<td><code>Invalid RRULE string</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>401</strong></td>
+<td>Não autenticado</td>
+<td><code>Unauthorized</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>403</strong></td>
+<td>Sem permissão para a unidade</td>
+<td><code>Forbidden for healthUnitTaxId=...</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>404</strong></td>
+<td>Agenda(s) referida(s) inexistente(s)</td>
+<td><code>Schedule not found: sch_123</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>409</strong></td>
+<td>Invariantes A/B violadas</td>
+<td><code>Ambiguous scope: set includeForAllUnitSchedules OR assignedSchedules</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>409</strong></td>
+<td>Colisão com marcações existentes (política rígida)</td>
+<td><code>Cannot block occupied hour 2025-11-01T09:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>422</strong></td>
+<td>Datas incoerentes</td>
+<td><code>startDate must be &lt;= endDate</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>422</strong></td>
+<td>Janelas inconsistentes</td>
+<td><code>startTime must be before endTime</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>422</strong></td>
+<td>Combinação incoerente de recorrência</td>
+<td><code>typeOfRecurrence requires excludeFor or rrule</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>500</strong></td>
+<td>Erro interno</td>
+<td><code>Failed to apply exclusions. correlationId=...</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exemplo-combinado-dia-janelas">Exemplo combinado (dia + janelas)</h2>
+<pre><code class="language-json">{
+  &quot;excludeDays&quot;: [
+    { &quot;title&quot;: &quot;Feriado Nacional&quot;, &quot;rrule&quot;: &quot;FREQ=YEARLY;BYMONTH=12;BYMONTHDAY=25&quot;, &quot;healthUnitTaxId&quot;: &quot;5002159961&quot; },
+    { &quot;title&quot;: &quot;Recesso&quot;, &quot;specificDate&quot;: &quot;2025-12-26T00:00:00Z&quot;, &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;, &quot;schedules&quot;: [&quot;sch_123&quot;] }
+  ],
+  &quot;excludeRanges&quot;: [
+    { &quot;title&quot;: &quot;Almoço&quot;, &quot;typeOfRecurrence&quot;: &quot;DAILY&quot;, &quot;startTime&quot;: &quot;1970-01-01T12:00:00Z&quot;, &quot;endTime&quot;: &quot;1970-01-01T13:00:00Z&quot;, &quot;excludeForAllSlots&quot;: true, &quot;includeForAllUnitSchedules&quot;: true, &quot;healthUnitTaxId&quot;: &quot;5002159961&quot;, &quot;definedBy&quot;: &quot;ops@baika&quot; }
+  ]
+}
+</code></pre>
+<p>No exemplo acima:
+- <code>ExcludeDay</code> remove <strong>25/12</strong> (via RRULE) e <strong>26/12</strong> (pontual) — <strong>antes</strong> de qualquer <code>ExcludeRange</code> ser aplicado.<br />
+- <code>ExcludeRange</code> bloqueia <strong>12:00–13:00</strong> em <strong>todos os schedules</strong> da unidade, em <strong>todos os dias</strong> (enquanto ativo).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
