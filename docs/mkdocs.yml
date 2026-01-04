@@ -1,0 +1,36 @@
+site_name: API Gestao de Agendas e Marcacoes de Consultas
+site_url: https://itamarpambo751.github.io/Consultation-Docs/
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+
+nav:
+  - Início: index.md
+  - Visão Geral:
+      - 2. Conceitos-base do Sistema: 2.md
+      - 3. Exclusões e Folgas: 3.md
+      - 4. Horários de Trabalho dos Profissionais e Atribuição Automática: 4.md
+      - 5. Marcação de Consultas: 5.md
+      - 6. Exclusões de Dias e Períodos: 6.md
+      - 7. Horários de Trabalho dos Profissionais: 7.md
+      - 8. Slots e HourBoxes: 8.md
+      - 9. Marcação de Consultas: 9.md
+      - 10. Exclusões e Bloqueios Avançados: 10.md
+      - 11. Horários de Trabalho de Profissionais: 11.md
+  - Visão Tecnica e regras de negócio:
+      - 1. Guia de configuração de agenda: GuiaDeConfiguracaoDaAgenda.md
+      - 2. Modelo de Exclusao na Agenda: ModelosdeExclusaonaAgenda.md
+      - 3. Guia de geração de Slots Forma A (Horarios): GuiadegeracaodeSlotsFormaA-horarios.md
+      - 4. Guia de geração de Slots Forma B (Capacidade): GuiadegeracaodeSlotsFormaB-capacidade.md
